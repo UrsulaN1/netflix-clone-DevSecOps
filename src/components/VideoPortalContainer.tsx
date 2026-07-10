@@ -55,7 +55,7 @@ export default function VideoPortalContainer() {
             position: "absolute",
             display: "inline-block",
             ...(rect && {
-              top: rect.top + window.pageYOffset - 0.75 * rect.height,
+              top: rect.top + window.scrollY - 0.75 * rect.height,
               ...(isLastElement
                 ? {
                     right: document.documentElement.clientWidth - rect.right,
