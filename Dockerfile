@@ -9,7 +9,7 @@ COPY . .
 # Pass the secret ONLY as a build argument if required by Vite, 
 # but DO NOT save it to a global image ENV statement.
 ARG TMDB_V3_API_KEY
-RUN VITE_APP_TMDB_V3_API_KEY=$TMDB_V3_API_KEY yarn build
+RUN VITE_API_ENDPOINT_URL="https://api.themoviedb.org/3" VITE_APP_TMDB_V3_API_KEY=$TMDB_V3_API_KEY yarn build
 
 # --- Stage 2: Serve with Nginx ---
 FROM nginx:stable-alpine
